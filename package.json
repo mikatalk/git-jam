@@ -1,0 +1,9 @@
+{
+  "name": "git-jam",
+  "version": "1.0.0",
+  "description": "Github tile map jammer",
+  "main": "bot.js",
+  "repository": "git@github.com:mikatalk/git-jam.git",
+  "author": "Mika I.",
+  "license": "MIT"
+}
