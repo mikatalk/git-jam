@@ -13,7 +13,7 @@ exec('git pull && git add jam.txt && git commit -m "'+code+'" && git push', (err
   if (error) {
     return console.log('Error:', error, error.code);
   } 
-  console.log(' √ Pushed to Git')
+  console.log(' √ Pushed to Git -', code)
 })
 
 
