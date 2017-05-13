@@ -5,5 +5,11 @@
   "main": "bot.js",
   "repository": "git@github.com:mikatalk/git-jam.git",
   "author": "Mika I.",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.18.1"
+  },
+  "scripts" : {
+    "postinstall" : "node install.js"
+  }
 }
