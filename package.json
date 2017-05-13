@@ -10,6 +10,5 @@
     "moment": "^2.18.1"
   },
   "scripts" : {
-    "postinstall" : "node install.js"
   }
 }
