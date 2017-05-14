@@ -32,11 +32,11 @@ let isPixel = days[y][x] == '#';
 
 // Randomize:
 // if it IS an update day, LOW exit likelyness
-if ( isPixel && Math.random()<.2 ) {
+if ( isPixel && Math.random()<.25 ) {
   return console.log('Busy day but not now...');
 }
 // if it IS NOT an update day, HIGH exit likelyness
-if ( !isPixel && Math.random()<.8 ) {
+if ( !isPixel && Math.random()<.75 ) {
   return console.log('Not a busy day, not now...');
 }
 
@@ -52,6 +52,7 @@ while ( n-- > 0 )
 n = Math.random() * 100;
 while ( n-- > 0 )
   code += emos[Math.floor(Math.random()*emos.length)] + ' '
+  if ( Math.random() > .8 ) code += '\n';
 // save code
 fs.writeFileSync('jam.txt', code, 'utf8');
 // push changes to github
