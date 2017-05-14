@@ -49,10 +49,10 @@ let message = ''
 while ( n-- > 0 )
   message += emos[Math.floor(Math.random()*emos.length)] + ' '
 // generate random code
-n = Math.random() * 100;
+n = Math.random() * 200;
 while ( n-- > 0 )
   code += emos[Math.floor(Math.random()*emos.length)] + ' '
-  if ( Math.random() > .8 ) code += '\n';
+  if ( Math.random() > .8 ) code += os.EOL;//' \r\n';
 // save code
 fs.writeFileSync('jam.txt', code, 'utf8');
 // push changes to github
