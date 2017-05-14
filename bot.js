@@ -32,12 +32,12 @@ let isPixel = days[y][x] == '#';
 
 // Randomize:
 // if it IS an update day, LOW exit likelyness
-if ( isPixel && Math.random()<.25 ) {
-  return console.log('Busy day but not now...');
+if ( isPixel && Math.random()<.15 ) {
+  return console.log('['+moment().format('MMMM Do YYYY, h:mm:ss a')+'] - Busy day but not now...');
 }
 // if it IS NOT an update day, HIGH exit likelyness
-if ( !isPixel && Math.random()<.75 ) {
-  return console.log('Not a busy day, not now...');
+if ( !isPixel && Math.random()<.85 ) {
+  return console.log('['+moment().format('MMMM Do YYYY, h:mm:ss a')+'] - Not a busy day, not now...');
 }
 
 const emos = ["😀","😃","😄","😁","😆","😅","😂","😊","😇","🙂","🙃","😉","😌","😍","😘","😗","😙","😚",
@@ -68,8 +68,8 @@ fs.writeFileSync('jam.txt', code, 'utf8');
 // push changes to github
 exec('git pull && git add jam.txt && git commit -m "'+message+'" && git push', (error, stdout, stderr)=>{
   if (error) {
-    return console.log('Error:', error, error.code);
+    return console.log('['+moment().format('MMMM Do YYYY, h:mm:ss a')+'] - Error:', error, error.code);
   } 
-  console.log(' √ Pushed to Git -', moment().format('MMMM Do YYYY, h:mm:ss a'), '-', message);
+  console.log('['+moment().format('MMMM Do YYYY, h:mm:ss a')+'] -  √ Pushed to Git -', message);
 })
 
