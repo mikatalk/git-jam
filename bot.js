@@ -23,7 +23,7 @@ let days = [
   String('------------------------------------------------------------').split('')
 ];
 
-let offset = 12; // because the day i wrote this was 12 days after %60 == 0
+let offset = 13; // because the day i wrote this was 12 days after %60 == 0
 // find indexes
 let x = ( moment().diff(moment().startOf('year'), 'days') - offset ) % 60;
 let y = moment().weekday() % 7;
@@ -32,7 +32,7 @@ let isPixel = days[y][x] == '#';
 
 // Randomize:
 // if it IS an update day, LOW exit likelyness
-if ( isPixel && Math.random()<.15 ) {
+if ( isPixel && Math.random()<.2 ) {
   return console.log('['+moment().format('MMMM Do YYYY, h:mm:ss a')+'] - Busy day but not now...');
 }
 // if it IS NOT an update day, HIGH exit likelyness
