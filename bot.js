@@ -30,18 +30,19 @@ let days = [
   '------------------------------------------------------------'.split('')
 ];
 
-let offset = 13; // because the day i wrote this was 12 days after %60 == 0
+let offset = 18; // because the day i wrote this was 12 days after %60 == 0
 // find indexes
-let x = ( moment().diff(moment().startOf('year'), 'days') - offset ) % 60;
+let x = ( Math.floor((moment().diff(moment().startOf('year'), 'days') )/7-17) ) % 60;
 let y = moment().weekday() % 7;
 // define if it s letter day or not
 let isPixel = days[y][x] == '#';
 log = (...opts) => {
   console.log( (isPixel?'#':'-')+' ['+moment().format('M-D-YY, h:mm a')+'] -', opts.join(' ') );
 }
+
 // Randomize:
 // if it IS an update day, LOW exit likelyness
-if ( isPixel && Math.random()<.2 ) {
+if ( isPixel && Math.random()<.15 ) {
   return log('Busy day but not now...');
 }
 // if it IS NOT an update day, HIGH exit likelyness
