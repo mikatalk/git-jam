@@ -30,9 +30,9 @@ let days = [
   '------------------------------------------------------------'.split('')
 ];
 
-let offset = 18; // because the day i wrote this was 12 days after %60 == 0
+let offset = 17; // because the day i wrote this was 12 days after %60 == 0
 // find indexes
-let x = ( Math.floor((moment().diff(moment().startOf('year'), 'days') )/7-17) ) % 60;
+let x = ( Math.floor((moment().diff(moment().startOf('year'), 'weeks') )-offset) ) % 60;
 let y = moment().weekday() % 7;
 // define if it s letter day or not
 let isPixel = days[y][x] == '#';
