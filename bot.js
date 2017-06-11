@@ -76,7 +76,7 @@ while ( n-- > 0 )
 // save code
 fs.writeFileSync('jam.txt', code, 'utf8');
 // push changes to github
-exec('git pull && git add jam.txt && git commit -m "'+message+'" && git push', (error, stdout, stderr)=>{
+exec('git stash && git pull && git add jam.txt && git commit -m "'+message+'" && git push', (error, stdout, stderr)=>{
   if (error) {
     return log('Error:', error, error.code);
   } 
