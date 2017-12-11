@@ -3,14 +3,6 @@ const exec = require('child_process').exec;
 const moment = require('moment');
 
 /*****************************************************************
-    0.........1.........2.........3.........4.........5.........
-0   ------------------------------------------------------------
-1   ---##----##----####-------##------##---#####---#####--------
-2   ---####--##---##--##------##-----------##------##-----------
-3   ---##-##-##---##--##------##------##---####----####---------
-4   ---##--####---##--##------##------##---##------##-----------
-5   ---##----##----####-------#####---##---##------#####--------
-6   ------------------------------------------------------------
 // run in console to draw on github timeline:
 a = document.getElementsByClassName('day')
 for (let i=0, l=a.length; i<l; i++ ){
@@ -32,7 +24,7 @@ let days = [
 
 let offset = 17; // because the day i wrote this was 12 days after %60 == 0
 // find indexes
-let x = ( Math.floor((moment().diff(moment().startOf('year'), 'weeks') )-offset) ) % 60;
+let x = ( Math.floor((moment().diff(moment('01-01-2016', 'MM-DD-YYYY').startOf('year'), 'weeks') )-offset) ) % 60;
 let y = moment().weekday() % 7;
 // define if it s letter day or not
 let isPixel = days[y][x] == '#';
